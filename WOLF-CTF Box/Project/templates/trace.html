@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+
+   <SCRIPT language=JavaScript type="text/javascript">
+
+
+
+  var message = "**This page is no longer active**";
+
+  function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+
+  if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+
+  document.onmousedown = rtclickcheck;
+
+  </SCRIPT>
+
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body background="/static/z.png">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{ url_for('index') }}"><span style="font-weight: bold; font-size: 2rem; color: red; ">WOLF<img class="img-fluid" style="width: 24%;" src="/static/w.png"></span></a>
+      <button class="navbar-toggler" type="buttom" data-toggler="collapse" data-target="#navbarSupportedContent" aria-control="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <br>
+      <br>
+      <h1 class="text-secondary">Hey Trace Me - WOLF  <img class="img-fluid" style="width: 10%;" src="/static/w.png"></h1><br>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6" id="form">
+            <form action="/pasteboard" id="formDisplay"  method="post" autocomplete="off">
+              <div class="form-group">
+                <lable for="name">Enter the flag to proceed</lable>
+                <input id="name" type="text" class="form-control" placeholder="Enter the flag to proceed" name="key">
+              </div>
+              <button class="btn btn-danger btn-lg" type="submit">Confirm</button>
+            </form><br><br>
+            <div class="container">
+              <ul class="list-unstyled">
+                <li style="font-weight: bold; font-size: 1.3rem;"><span style="font-size: 1.2rem; color: black; ">Hey Alpha!!!!<br>I'm the WOLF, the key is tracealpha123456
+                <br>You can decode from number 1 alphabet standard</li>
+                <hr class="col-md-6">
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+          <ul class="list-unstyled">
+
+            <hr class="col-md-6">
+          </ul>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      /*
+
+      --here, you put the encrypted code from the link above--
+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
+
+
+
+      */
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+  </body>
+  <footer >
+  </footer>
+</html>

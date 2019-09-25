@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <body onload="myFunction()">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    
+    <title>Sheep</title>
+  </head>
+  <body background="/static/z.png">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{ url_for('index') }}"><span style="font-weight: bold; font-size: 2rem; color: red; ">WOLF<img class="img-fluid" style="width: 24%;" src="/static/w.png"></span>
+      <div id="cd"></div></a>
+      <button class="navbar-toggler" type="buttom" data-toggler="collapse" data-target="#navbarSupportedContent" aria-control="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div style="font-weight: bold; font-size: 1.3rem;"><span style="font-size: 1.2rem; color: white; ">Time remaining - &nbsp<span id="time" >05:00</span></div><span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br><br><br>
+    <img class="img-fluid" style="width: 10%; hight:10%" src="/static/s.png"><br>
+    <div class="form-group">
+      <h2><span style="font-weight: bold; font-size: 2rem; color: white;">Sheep</span></h2>
+    </div>
+    <div class="form-group"><span style="font-size: 1rem; color: white;">Name: Sheep</span></div><br>
+    <div class="form-group"><span style="font-size: 1rem; color: white;">Email: Sheep@gmail.com</span></div><br>
+    <div class="form-group"><span style="font-size: 1rem; color: white;">Date of Birth: 10th March 2003</span></div><br>
+    <script language="javascript" type="text/javascript">
+          var file="/static/info.plist";
+          if file == "/static/info.plist"{
+            file = "/static/info.txt"
+            window.alert("You are not allowed to download this file!");
+            removeAttr('download');
+          }
+    </script>
+    <script>
+    function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                document.getElementById("time").innerHTML = "Expired!";
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        var fiveMinutes = 60 * 5,
+            display = document.querySelector('#time');
+        startTimer(fiveMinutes, display);
+    };
+    </script>
+    <div class="form-group"><span style="font-size: 1rem; color: white;"><a href=/static/info.txt onclick="this.href=file" download>
+  <img src="/static/folder.png" width="104" height="142">
+</a></span></div><br>
+      <p><span style="font-weight: bold; font-size: 1rem; color: white;">you are not allowed to download txt files<br>the key is in a plist. sheep stored the AWS Client id in that plist. that will be the key for the next level </span></p>
+       <br>
+       <div class="container">
+         <div class="row justify-content-center">
+           <div class="col-md-6" id="form">
+             <form action="/viewsas" id="formDisplay" method="post" autocomplete="off">
+               <div class="form-group">
+                 <lable for="name">Enter the flag to proceed</lable>
+                 <input id="name" type="text" class="form-control" placeholder="Enter the flag to proceed" name="key">
+               </div>
+               <button class="btn btn-danger btn-lg" type="submit">Confirm</button>
+             </form>
+           </div>
+         </div>
+       </div>
+    <main>
+      {% block main %}{% endblock %}
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.plugin.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.countdown.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.min.js'></script>
+  <script  src="static/index.js"></script>
+  </body>
+  <footer >
+  </footer>
+</html>

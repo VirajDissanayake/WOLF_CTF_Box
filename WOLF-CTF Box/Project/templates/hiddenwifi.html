@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body background="/static/z.png">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{ url_for('index') }}"><span style="font-weight: bold; font-size: 2rem; color: red; ">WOLF<img class="img-fluid" style="width: 24%;" src="/static/w.png"></span>
+      <div id="cd"></div></a>
+      <button class="navbar-toggler" type="buttom" data-toggler="collapse" data-target="#navbarSupportedContent" aria-control="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div style="font-weight: bold; font-size: 1.3rem;"><span style="font-size: 1.2rem; color: white; ">Time remaining - &nbsp<span id="time" >05:00</span></div><span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+    </nav>
+      <br>
+      <br>
+      <h1 class="text-secondary">So far Vulnerable - WOLF<img class="img-fluid" style="width: 10%;" src="/static/w.png"></h1><br>
+
+      <h4 class="text-secondary">The name of the hidden wifi network will grant you the access for the next level</h4>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6" id="form">
+            <form action="/HiddenNetworkpass" id="formDisplay"  method="post" autocomplete="off">
+              <div class="form-group">
+                <lable for="name">Enter the flag to proceed</lable>
+                <input id="name" type="text" class="form-control" placeholder="Enter the flag to proceed" name="key">
+              </div>
+              <button class="btn btn-danger btn-lg" type="submit">Confirm</button>
+            </form><br><br>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+          <ul class="list-unstyled">
+
+            <hr class="col-md-6">
+          </ul>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <script>
+      function startTimer(duration, display) {
+          var timer = duration, minutes, seconds;
+          setInterval(function () {
+              minutes = parseInt(timer / 60, 10)
+              seconds = parseInt(timer % 60, 10);
+
+              minutes = minutes < 10 ? "0" + minutes : minutes;
+              seconds = seconds < 10 ? "0" + seconds : seconds;
+
+              display.textContent = minutes + ":" + seconds;
+
+              if (--timer < 0) {
+                  document.getElementById("time").innerHTML = "Expired!";
+              }
+          }, 1000);
+      }
+
+      window.onload = function () {
+          var fiveMinutes = 60 * 5,
+              display = document.querySelector('#time');
+          startTimer(fiveMinutes, display);
+      };
+      </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.plugin.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-countdown/2.0.2/jquery.countdown.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.min.js'></script>
+  <script  src="static/index.js"></script>
+  </body>
+  <footer >
+  </footer>
+</html>
